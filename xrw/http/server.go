@@ -33,7 +33,6 @@ func (p PlayerServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func (p *PlayerServer) showScore(w http.ResponseWriter, r *http.Request) {
 	player := r.URL.Path[len("/players/"):]
-
 	score := p.store.GetPlayerScore(player)
 
 	if score == 0 {
